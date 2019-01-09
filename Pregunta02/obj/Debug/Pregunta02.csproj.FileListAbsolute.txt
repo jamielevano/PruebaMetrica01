@@ -1,0 +1,4 @@
+D:\Postulaciones\Metrica\SolJamie\SolPruebaMetrica\Pregunta02\bin\Debug\Pregunta02.exe
+D:\Postulaciones\Metrica\SolJamie\SolPruebaMetrica\Pregunta02\bin\Debug\Pregunta02.pdb
+D:\Postulaciones\Metrica\SolJamie\SolPruebaMetrica\Pregunta02\obj\Debug\Pregunta02.exe
+D:\Postulaciones\Metrica\SolJamie\SolPruebaMetrica\Pregunta02\obj\Debug\Pregunta02.pdb

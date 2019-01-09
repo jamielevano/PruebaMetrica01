@@ -1,0 +1,48 @@
+﻿
+@model List<WebBanco.Models.OrdenPago>
+@{
+    ViewBag.Title = "Mis Ordenes de Pago";
+
+}
+
+
+<br /><br />
+<div class="container-fluid">
+
+    <div>
+        <a class="btn btn-primary" href="~/OrdenPago/create">Nuevo</a>
+    </div>
+    <table class="table">
+        <tr class="btn-primary">
+            <th style="text-align:center">Item</th>
+            <th style="text-align:center">Banco</th>
+            <th style="text-align:center">Sucursal</th>
+            <th style="text-align:center">Monto</th>
+            <th style="text-align:center">Moneda</th>
+            <th style="text-align:center">Estado</th>
+            <th style="text-align:center">Fecha Pago</th>
+            <th style="text-align:center" colspan="2">Opciones</th>
+        </tr>
+
+        @{int index = 1; }
+        @foreach (var op in Model)
+        {
+            <tr>
+                <td>@index.ToString()</td>
+                <td>@op.NombreBanco</td>
+                <td>@op.NombreSucursal</td>
+                <td>@op.Monto  </td>
+                <td>@op.Moneda  </td>
+                <td>@op.Estado  </td>
+                <td>@op.FechaPago.ToString("dd/MM/yyyy")</td>
+                <td><a class="btn btn-primary" href="~/OrdenPago/edit/@op.IdOrdenPago">Actualizar</a></td>
+                <td><a class="btn btn-danger" href="~/OrdenPago/delete/@op.IdOrdenPago">Eliminar</a></td>
+            </tr>
+            { index = index + 1; }
+        }
+
+
+    </table>
+
+
+    </div>

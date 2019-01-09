@@ -1,0 +1,43 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model List<WebBanco.Models.Banco>
+@{
+    ViewBag.Title = "Mis Bancos";
+
+}
+
+
+<br /><br />
+
+<div class="container-fluid">
+    <div>
+        <a class="btn btn-primary" href="~/Banco/create">Nuevo</a>
+    </div>
+    <table class="table">
+        <tr class="btn-primary">
+            <th style="text-align:center">Item</th>
+            <th style="text-align:center">Nombre</th>
+            <th style="text-align:center">Direccion</th>
+            <th style="text-align:center">Fecha Registro</th>
+            <th style="text-align:center" colspan="2">Opciones</th>
+        </tr>
+        @{int index = 1; }
+        @foreach (var ban in Model)
+        {
+            <tr>
+                <td>@index.ToString()</td>
+                <td>@ban.Nombre</td>
+                <td>@ban.Direccion</td>
+                <td>@ban.FechaRegistro</td>
+                <td><a class="btn btn-primary" href="~/Banco/edit/@ban.Id">Actualizar</a></td>
+                <td><a class="btn btn-danger" href="~/Banco/delete/@ban.Id">Eliminar</a></td>
+            </tr>
+            {index = index + 1; }
+        }
+
+    </table>
+
+</div>
+

@@ -1,0 +1,95 @@
+﻿
+
+@model WebBanco.Models.OrdenPago
+@{
+    ViewBag.Title = "Create";
+}
+
+<br /><br /><br />
+<div class="container text-center text-primary">
+    <h1>
+        Registrar Orden Pago
+    </h1>
+    <br /><br />
+
+</div>
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NombreBanco, htmlAttributes: new { @class = "control-label col-md-2" })
+
+            <div class="col-md-6">
+                @Html.DropDownListFor(model => model.IdBanco, ViewData["Bancos"] as List<SelectListItem>, "--Seleccionar--", new { @id = "ddlBanco" })
+                @Html.ValidationMessageFor(model => model.IdBanco)
+                @Html.HiddenFor(model => model.IdBanco)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NombreSucursal, htmlAttributes: new { @class = "control-label col-md-2" })
+
+            <div class="col-md-6">
+                @Html.DropDownListFor(model => model.IdSucursal, new SelectList(ViewBag.listaSucursal, "id", "Nombre"), "--Seleccionar--", new { @id = "ddlSucursal" })
+                @Html.ValidationMessageFor(model => model.IdSucursal)
+                @Html.HiddenFor(model => model.IdSucursal)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Monto, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.Monto)
+                @Html.ValidationMessageFor(model => model.Monto)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Moneda, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.Moneda)
+                @Html.ValidationMessageFor(model => model.Moneda)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FechaPago, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.FechaPago)
+                @Html.ValidationMessageFor(model => model.FechaPago)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Estado, htmlAttributes: new { @class = "control-label col-md-2" })
+
+            <div class="col-md-6">
+                @Html.DropDownListFor(model => model.Estado, new SelectList(ViewBag.ListaEstados, "Id", "Nombre"), "--Seleccionar--", new { @id = "ddlEstado" })
+                @Html.ValidationMessageFor(model => model.Estado)
+                @Html.HiddenFor(model => model.Estado)
+            </div>
+        </div>
+        
+        <div class="form-actions col-md-offset-2">
+            <input class="btn btn-primary" type="submit" name="btnguardar" value="Guardar" />|
+            @Html.ActionLink("Regresar al Listado", "Index")
+        </div>
+
+    </div>
+
+}
+<div class="container text-center text-danger">
+    <h1>
+        @ViewBag.mensajeError
+    </h1>
+
+</div>
+<div class="container text-center text-success">
+    <h1>
+        @ViewBag.mensajeExito
+    </h1>
+
+</div>
+

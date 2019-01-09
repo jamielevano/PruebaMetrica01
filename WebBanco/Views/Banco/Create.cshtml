@@ -1,0 +1,47 @@
+﻿@model WebBanco.Models.Banco
+@{
+    ViewBag.Title = "Create";
+}
+<br /><br /><br />
+<div class="container text-center text-primary">
+    <h1>
+        Registrar Banco
+    </h1>
+    <br /><br />
+</div>
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Direccion, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.Direccion, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+        
+        <div class="form-actions col-md-offset-2">
+            <input class="btn btn-primary" type="submit" name="btnguardar" value="Guardar" />|
+            @Html.ActionLink("Regresar al Listado", "Index")
+        </div>
+
+    </div>
+
+}
+<div class="container text-center text-danger">
+    <h1>
+        @ViewBag.mensajeError
+    </h1>
+
+</div>
+<div class="container text-center text-success">
+    <h1>
+        @ViewBag.mensajeExito
+    </h1>
+
+</div>

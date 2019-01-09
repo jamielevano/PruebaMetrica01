@@ -1,0 +1,5 @@
+D:\Postulaciones\Metrica\SolJamie\SolPruebaMetrica\Pregunta03\bin\Debug\Pregunta03.exe
+D:\Postulaciones\Metrica\SolJamie\SolPruebaMetrica\Pregunta03\bin\Debug\Pregunta03.pdb
+D:\Postulaciones\Metrica\SolJamie\SolPruebaMetrica\Pregunta03\obj\Debug\Pregunta03.exe
+D:\Postulaciones\Metrica\SolJamie\SolPruebaMetrica\Pregunta03\obj\Debug\Pregunta03.pdb
+D:\Postulaciones\Metrica\SolJamie\SolPruebaMetrica\Pregunta03\obj\Debug\Pregunta03.csprojResolveAssemblyReference.cache
